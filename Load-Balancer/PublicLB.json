@@ -1,0 +1,35 @@
+{
+    "name": "azur-lb-prod-euw-git-ps-public",
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/azur-lb-prod-euw-git-ps-public",
+    "etag": "W/\"eb040990-df1c-4c67-9ea6-ab70e5ce0308\"",
+    "type": "Microsoft.Network/loadBalancers",
+    "location": "westeurope",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "e55e9962-efc7-4306-9403-8847df5fb2cc",
+        "frontendIPConfigurations": [
+            {
+                "name": "frontendip",
+                "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/azur-lb-prod-euw-git-ps-public/frontendIPConfigurations/frontendip",
+                "etag": "W/\"eb040990-df1c-4c67-9ea6-ab70e5ce0308\"",
+                "type": "Microsoft.Network/loadBalancers/frontendIPConfigurations",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "privateIPAllocationMethod": "Dynamic",
+                    "publicIPAddress": {
+                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/publicIPAddresses/azure-pip-prod-euw-git-ps-frontendip"
+                    }
+                }
+            }
+        ],
+        "backendAddressPools": [],
+        "loadBalancingRules": [],
+        "probes": [],
+        "inboundNatRules": [],
+        "inboundNatPools": []
+    },
+    "sku": {
+        "name": "Standard"
+    }
+}

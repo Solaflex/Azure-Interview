@@ -1,0 +1,92 @@
+{
+    "name": "myLoadBalancer",
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer",
+    "etag": "W/\"b8182e08-10ff-4304-ab40-a8c732a8d862\"",
+    "type": "Microsoft.Network/loadBalancers",
+    "location": "westeurope",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "19eaa06a-391a-46b8-b5bd-623c541724cf",
+        "frontendIPConfigurations": [
+            {
+                "name": "frontend",
+                "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/frontendIPConfigurations/frontend",
+                "etag": "W/\"b8182e08-10ff-4304-ab40-a8c732a8d862\"",
+                "type": "Microsoft.Network/loadBalancers/frontendIPConfigurations",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "privateIPAddress": "10.0.0.4",
+                    "privateIPAllocationMethod": "Static",
+                    "subnet": {
+                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/virtualNetworks/azur-vnet-prod-euw-git-ps-testnetwork/subnets/default"
+                    },
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/loadBalancingRules/myHTTPRule"
+                        }
+                    ]
+                }
+            }
+        ],
+        "backendAddressPools": [
+            {
+                "name": "myBackEndPool",
+                "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/backendAddressPools/myBackEndPool",
+                "etag": "W/\"b8182e08-10ff-4304-ab40-a8c732a8d862\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "loadBalancingRules": [
+                        {
+                            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/loadBalancingRules/myHTTPRule"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/loadBalancers/backendAddressPools"
+            }
+        ],
+        "loadBalancingRules": [
+            {
+                "name": "myHTTPRule",
+                "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/loadBalancingRules/myHTTPRule",
+                "etag": "W/\"b8182e08-10ff-4304-ab40-a8c732a8d862\"",
+                "type": "Microsoft.Network/loadBalancers/loadBalancingRules",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "frontendIPConfiguration": {
+                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/frontendIPConfigurations/frontend"
+                    },
+                    "frontendPort": 80,
+                    "backendPort": 80,
+                    "enableFloatingIP": false,
+                    "idleTimeoutInMinutes": 15,
+                    "protocol": "Tcp",
+                    "loadDistribution": "Default",
+                    "disableOutboundSnat": false,
+                    "backendAddressPool": {
+                        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/backendAddressPools/myBackEndPool"
+                    }
+                }
+            }
+        ],
+        "probes": [
+            {
+                "name": "myHealthProbe",
+                "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/lb-policy/providers/Microsoft.Network/loadBalancers/myLoadBalancer/probes/myHealthProbe",
+                "etag": "W/\"b8182e08-10ff-4304-ab40-a8c732a8d862\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "protocol": "Tcp",
+                    "port": 80,
+                    "intervalInSeconds": 360,
+                    "numberOfProbes": 5
+                },
+                "type": "Microsoft.Network/loadBalancers/probes"
+            }
+        ],
+        "inboundNatRules": [],
+        "inboundNatPools": []
+    },
+    "sku": {
+        "name": "Standard"
+    }
+}
